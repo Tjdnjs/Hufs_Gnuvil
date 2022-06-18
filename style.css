@@ -1,0 +1,27 @@
+html, body{
+    height: 100%; margin:0;
+}
+body{
+    background: url("../images/low-poly-grid-haikei.svg");
+    background-size: cover;
+}
+.container{
+    height: 100%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main{
+    text-align: center;
+    color: white; padding: 20px;
+    background-color: rgba(0,0,0,0.2);
+}
+.item:nth-child(1){
+    font-size: 8rem;
+    font-weight: bolder;
+    line-height: 1em;
+}
+.item:nth-child(2){
+    font-size: 1.8rem;
+}
