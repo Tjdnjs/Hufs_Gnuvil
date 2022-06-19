@@ -55,7 +55,7 @@ figcaption{
 @media (max-width: 1000px){
     section{
         color: rgb(47, 53, 62);
-        text-shadow: 0px 0px 0px black;
+        text-shadow: .5px .5px .5px rgba(255,255,255,.5);
     }
     #menu1,#menu2{
         flex-direction: column;
