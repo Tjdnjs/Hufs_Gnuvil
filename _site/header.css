@@ -1,0 +1,96 @@
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    background:transparent;
+    /* box-shadow: 0 0 3px #000; */
+    z-index:50;
+}
+.wrap{
+    display: flex;
+    height: 8vh;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12.5vw;
+    padding-top: 4vw;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+}
+
+.wrap .logo img{
+    height: 6vh;
+}
+
+.menu{
+    /* display: none; */
+    border: none;
+    background:transparent;
+    font-size: 2.5vh;
+}
+.menu a{
+    color: rgb(0, 48, 132);
+    text-decoration: none;
+}
+.menu a:visited{
+    text-decoration: none;
+    color: rgb(0, 48, 132);
+}
+@media (max-width:1000px){
+    .wrap{
+        height: 8vh;
+        padding: 0 5vw;
+        padding-top: 5vw;
+    }
+    .wrap .logo img{
+        height: 5vh;
+    }
+    
+    .menu{
+        /* display: none; */
+        border: none;
+        background:transparent;
+        font-size: 2.5vh;
+    }
+}
+.hvr-float-shadow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-float-shadow:before {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  /* W3C */
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: transform, opacity;
+  transition-property: transform, opacity;
+}
+.hvr-float-shadow:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+  /* move the element up by 5px */
+}
+.hvr-float-shadow:hover:before, .hvr-float-shadow:focus:before, .hvr-float-shadow:active:before {
+  opacity: 1;
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
+  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+}
