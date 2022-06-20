@@ -52,11 +52,103 @@ figcaption{
     padding-top:1em;
 }
 
+figure a{
+    color: rgb(244, 244, 244);
+    text-shadow: 1px 1px 1px rgba(0,0,0,1);
+    text-decoration: none;
+}
+figure a:visited{
+    text-decoration: none;
+    color: rgb(244, 244, 244);
+}
+
+@media (min-width:1001px){
+    @-webkit-keyframes hvr-pulse-shrink {
+        to {
+          -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+        }
+      }
+      @keyframes hvr-pulse-shrink {
+        to {
+          -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+        }
+    }
+    .hvr-pulse-shrink {
+      display: inline-block;
+      vertical-align: middle;
+      -webkit-transform: perspective(1px) translateZ(0);
+      transform: perspective(1px) translateZ(0);
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    }
+    .hvr-pulse-shrink:hover, .hvr-pulse-shrink:focus, .hvr-pulse-shrink:active {
+      -webkit-animation-name: hvr-pulse-shrink;
+      animation-name: hvr-pulse-shrink;
+      -webkit-animation-duration: .35s;
+      animation-duration: .35s;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+      animation-direction: alternate;
+    }
+    .hvr-rectangle-out {
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        position: relative;
+        /* background: #e1e1e1; */
+        -webkit-transition-property: color;
+        transition-property: color;
+        -webkit-transition-duration: .35s;
+        transition-duration: .35s;
+      }
+      .hvr-rectangle-out:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,.1);
+        border-radius: 4vw;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: .35s;
+        transition-duration: .35s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+      }
+      .hvr-rectangle-out:hover, .hvr-rectangle-out:focus, .hvr-rectangle-out:active {
+        color: white;
+      }
+      .hvr-rectangle-out:hover:before, .hvr-rectangle-out:focus:before, .hvr-rectangle-out:active:before {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+}
 @media (max-width: 1000px){
     section{
         color: rgb(47, 53, 62);
         text-shadow: .5px .5px .5px rgba(255,255,255,.5);
+    } 
+    figure a{
+        color: rgb(47, 53, 62);
+        text-shadow: .5px .5px .5px rgba(255,255,255,.5);
+        text-decoration: none;
     }
+    figure a:visited{
+        text-decoration: none;
+        color: rgb(47, 53, 62);
+    }
+
     #menu1,#menu2{
         flex-direction: column;
         width: 40vw;
@@ -80,5 +172,5 @@ figcaption{
     }
     figcaption{
         font-size:1.4vw;
-    }
+    } 
 }
